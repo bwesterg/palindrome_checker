@@ -62,3 +62,19 @@ function repeatStringNumTimes(str, num) {
 
 repeatStringNumTimes("abc", 3);
 //returns abcabcabc
+
+
+//Truncate a string (first argument) if it is longer 
+//than the given maximum string length (second argument). 
+//Return the truncated string with a ... ending.
+
+function truncateString(str, num) {
+    if (num < str.length) {
+        let elypsis = str.split('').splice(num).join('');
+        //console.log(str.replace(elypsis, '...'))
+        let newStr = str.replace(elypsis, '...');
+        return newStr;
+    } else if (num >= str.length) {
+        return str;
+    }
+};
