@@ -43,3 +43,22 @@ function confirmEnding(str, target) {
 };
 
 confirmEnding("Bastian", "n");
+
+//Repeat a given string str (first argument) for num times 
+//(second argument). Return an empty string if num is 
+//not a positive number. For the purpose of this challenge, 
+//do not use the built-in .repeat() method.
+
+function repeatStringNumTimes(str, num) {
+
+    let arr = []
+    console.log(str.split('').join(''));
+
+    for(let i = 0; i <= num-1; i++){
+        arr.push(str);
+    }
+    return arr.join('');
+}
+
+repeatStringNumTimes("abc", 3);
+//returns abcabcabc
