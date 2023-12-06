@@ -78,3 +78,24 @@ function truncateString(str, num) {
         return str;
     }
 };
+
+
+//Return the provided string with the first letter of each word 
+//apitalized. Make sure the rest of the word is in lower case.
+//For the purpose of this exercise, you should also capitalize 
+//connecting words like the and of.
+function titleCase(str) {
+    const regex = / /g;
+    let modString = str.toLowerCase().split(regex);
+    let array = [];
+    //console.log(modString);
+    for (let word in modString){
+        array[word] = modString[word][0].toUpperCase() + modString[word].slice(1);
+    }
+    //console.log(array); 
+    let newString = array.join().replace(/,/g, ' ');
+    console.log(newString);
+    return newString;
+}
+
+titleCase("I'm a little tea pot");
