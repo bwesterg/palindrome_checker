@@ -63,7 +63,6 @@ function repeatStringNumTimes(str, num) {
 repeatStringNumTimes("abc", 3);
 //returns abcabcabc
 
-
 //Truncate a string (first argument) if it is longer 
 //than the given maximum string length (second argument). 
 //Return the truncated string with a ... ending.
@@ -78,7 +77,6 @@ function truncateString(str, num) {
         return str;
     }
 };
-
 
 //Return the provided string with the first letter of each word 
 //apitalized. Make sure the rest of the word is in lower case.
