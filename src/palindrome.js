@@ -62,3 +62,59 @@ function repeatStringNumTimes(str, num) {
 
 repeatStringNumTimes("abc", 3);
 //returns abcabcabc
+
+//Truncate a string (first argument) if it is longer 
+//than the given maximum string length (second argument). 
+//Return the truncated string with a ... ending.
+
+function truncateString(str, num) {
+    if (num < str.length) {
+        let elypsis = str.split('').splice(num).join('');
+        //console.log(str.replace(elypsis, '...'))
+        let newStr = str.replace(elypsis, '...');
+        return newStr;
+    } else if (num >= str.length) {
+        return str;
+    }
+};
+
+//Return the provided string with the first letter of each word 
+//apitalized. Make sure the rest of the word is in lower case.
+//For the purpose of this exercise, you should also capitalize 
+//connecting words like the and of.
+function titleCase(str) {
+    const regex = / /g;
+    let modString = str.toLowerCase().split(regex);
+    let array = [];
+    //console.log(modString);
+    for (let word in modString){
+        array[word] = modString[word][0].toUpperCase() + modString[word].slice(1);
+    }
+    //console.log(array); 
+    let newString = array.join().replace(/,/g, ' ');
+    console.log(newString);
+    return newString;
+}
+
+titleCase("I'm a little tea pot");
+
+//Copy each element of the first array into the second 
+//array, in order.
+
+//Begin inserting elements at index n of the second array.
+
+//Return the resulting array. The input arrays should 
+//remain the same after the function runs.
+
+function frankenSplice(arr1, arr2, n) {
+    let arr2copy = arr2.slice();
+    //console.log(arr2copy);
+    for (let i=0;i<arr1.length;i++){
+        arr2copy.splice(n,0,arr1[i]);
+        n++;
+    }
+    console.log(arr2copy)
+    return arr2copy; 
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
